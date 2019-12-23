@@ -1,0 +1,9 @@
+ffmpeg -i original/GX010163.MP4 -bsf:v h264_mp4toannexb -vcodec libx264 -c:a copy transformed/2019_12_19_x_14_20_GX010163_annex.mp4
+
+ffmpeg -i original/GX010163.MP4 -c:v libx264 -crf 18 -c:a copy transformed/2019_12_19_x_14_20_GX010163.mkv
+
+ffmpeg -i original/GX010163.MP4 -c:v libx264 -c:a copy -vcodec mpeg4 transformed/2019_12_19_x_14_20_GX010163_mpeg4.mp4
+
+
+ffmpeg -hwaccel cuvid -c:v hevc_cuvid -i original/GX010163.MP4 -c:a copy -c:v h264_nvenc -crf 18 transformed/kaki.mkv
+
